@@ -1,5 +1,5 @@
-import { LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES } from "./const/error.js";
-import { LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER, LOTTO_NUMBER_LENGTH } from "./const/lotto.const.js";
+import { LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES } from "./const/error.const.js";
+import { LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "./const/lotto.const.js";
 import { throwError } from "../utils/error.js";
 
 class Lotto {
