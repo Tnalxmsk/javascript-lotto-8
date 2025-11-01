@@ -23,7 +23,7 @@ class Lotto {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.INVALID_NUMBER);
     }
 
-    if (new Set(numbers).size !== LOTTO_NUMBER_LENGTH) {
+    if (new Set(numbers).size !== LOTTO_COUNT) {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.DUPLICATE);
     }
   }
