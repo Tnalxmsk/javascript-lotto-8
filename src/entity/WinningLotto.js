@@ -1,7 +1,7 @@
 import Lotto from "./Lotto.js";
 import { throwError } from "../utils/error.js";
 import { LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES } from "./const/error.const.js";
-import { LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
+import { LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
 
 class WinningLotto extends Lotto {
   #bonusNumber;
@@ -30,10 +30,6 @@ class WinningLotto extends Lotto {
    */
   hasBonusNumber(targetLotto) {
     return targetLotto.numbers.includes(this.#bonusNumber);
-  }
-
-  get bonusNumber() {
-    return this.#bonusNumber;
   }
 
   #validateBonusNumber(number) {
