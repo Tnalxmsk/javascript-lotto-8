@@ -2,7 +2,7 @@ import LottoResultCalculator from "../../src/service/LottoResultCalculator.servi
 import WinningLotto from "../../src/entity/WinningLotto.js";
 import Lotto from "../../src/entity/Lotto.js";
 import Ticket from "../../src/entity/Ticket.js";
-import { RANK } from "../../src/service/const/rank.js";
+import { RANK } from "../../src/service/const/rank.const.js";
 
 describe("로또 결과 계산 클래스 테스트", () => {
   test("로또 번호가 5개가 일치하지만 보너스 번호가 존재하지 않아 THIRD 를 반환한다.", () => {

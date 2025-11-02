@@ -1,4 +1,4 @@
-import { RANK } from "../../src/service/const/rank.js";
+import { RANK } from "../../src/service/const/rank.const.js";
 import { createResult } from "../../src/utils/createResult.js";
 import ProfitCalculator from "../../src/service/ProfitCalculator.service.js";
 
