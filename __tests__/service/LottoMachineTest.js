@@ -1,5 +1,5 @@
-import Order from "../src/entity/Order.js";
-import LottoMachine from "../src/service/LottoMachine.service.js";
+import Order from "../../src/entity/Order.js";
+import LottoMachine from "../../src/service/LottoMachine.service.js";
 
 describe("로또 발매기 클래스 테스트", () => {
   test("로또 발행 테스트 - 주문 금액 만큼 로또를 발행한다.", () => {
