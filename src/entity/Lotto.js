@@ -15,14 +15,15 @@ class Lotto {
   }
 
   #validate(numbers) {
+    if (numbers.some((number) => !Number.isInteger(number))) {
+      throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.INVALID_NUMBER);
+    }
     if (numbers.length !== LOTTO_COUNT) {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.MAX_COUNT);
     }
-
     if (numbers.some((number) => number < LOTTO_MIN_NUMBER || number > LOTTO_MAX_NUMBER)) {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.INVALID_NUMBER);
     }
-
     if (new Set(numbers).size !== LOTTO_COUNT) {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.DUPLICATE);
     }
