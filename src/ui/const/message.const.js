@@ -11,5 +11,6 @@ export const MESSAGE = {
     WINNING_RESULT: (matchCount, amount, winningCount) => `${matchCount}개 일치 (${amount}원) - ${winningCount}개`,
     WINNING_RESULT_HAS_BONUS: (matchCount, amount, winningCount) => `${matchCount}개 일치, 보너스 볼 일치 (${amount}원) - ${winningCount}개`,
     PROFIT_RATE: (rate) => `총 수익률은 ${rate}%입니다.`,
+    EMPTY_LINE: '',
   },
 };

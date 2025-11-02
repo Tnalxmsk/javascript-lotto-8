@@ -1,6 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { MESSAGE } from "./const/message.const.js";
-import { PRIZE, RANK, RANK_RULE } from "../service/const/rank.js";
+import { PRIZE, RANK, RANK_RULE } from "../service/const/rank.const.js";
 
 class OutputView {
 
@@ -23,12 +23,15 @@ class OutputView {
     this.printLine();
     Console.print(MESSAGE.OUTPUT.WINNING_STATISTICS);
     for (const item of [...result].reverse()) {
+      const matchCount = RANK_RULE[item.rank];
+      const prize = PRIZE[item.rank].toLocaleString();
+      const winningCount = item.count.toLocaleString();
       if (item.rank === RANK.NONE) continue;
       if (item.rank === RANK.SECOND) {
-        Console.print(MESSAGE.OUTPUT.WINNING_RESULT_HAS_BONUS(RANK_RULE[item.rank], PRIZE[item.rank].toLocaleString(), item.count.toLocaleString()));
+        Console.print(MESSAGE.OUTPUT.WINNING_RESULT_HAS_BONUS(matchCount, prize, winningCount));
         continue;
       }
-      Console.print(MESSAGE.OUTPUT.WINNING_RESULT(RANK_RULE[item.rank], PRIZE[item.rank].toLocaleString(), item.count.toLocaleString()));
+      Console.print(MESSAGE.OUTPUT.WINNING_RESULT(matchCount, prize, winningCount));
     }
   }
 
@@ -45,7 +48,7 @@ class OutputView {
   }
 
   static printLine() {
-    Console.print('');
+    Console.print(MESSAGE.OUTPUT.EMPTY_LINE);
   }
 }
 
