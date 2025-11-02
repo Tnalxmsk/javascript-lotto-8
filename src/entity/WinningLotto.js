@@ -1,15 +1,18 @@
 import Lotto from "./Lotto.js";
 import { throwError } from "../utils/error.js";
 import { LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES } from "./const/error.const.js";
-import { LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
+import { LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
 
 class WinningLotto extends Lotto {
   #bonusNumber;
 
-  constructor(props, bonusNumber) {
-    super(props);
-    this.#validate(bonusNumber);
-    this.#bonusNumber = bonusNumber;
+  constructor(numbers) {
+    super(numbers);
+  }
+
+  registerBonusNumber(number) {
+    this.#validateBonusNumber(number);
+    this.#bonusNumber = number;
   }
 
   /**
@@ -33,7 +36,7 @@ class WinningLotto extends Lotto {
     return this.#bonusNumber;
   }
 
-  #validate(number) {
+  #validateBonusNumber(number) {
     const targetNumber = Number(number);
     if (!Number.isInteger(targetNumber)) {
       throwError(LOTTO_ERROR_MESSAGE, LOTTO_ERROR_TYPES.INVALID_NUMBER);
