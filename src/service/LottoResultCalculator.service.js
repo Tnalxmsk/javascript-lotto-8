@@ -1,4 +1,5 @@
 import { RANK, RANK_RULE } from "./const/rank.js";
+import { createResult } from "../utils/createResult.js";
 
 class LottoResultCalculator {
 
@@ -8,9 +9,7 @@ class LottoResultCalculator {
    *  @returns {Array<{ rank: string, count: number }>}
    */
   evaluate(winningLotto, ticket) {
-    const result = Object
-      .values(RANK)
-      .map((rank) => ({ rank, count: 0 }));
+    const result = createResult();
 
     for (const myLotto of ticket.lottos) {
       const matchCount = winningLotto.countMatches(myLotto);
