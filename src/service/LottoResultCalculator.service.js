@@ -1,5 +1,6 @@
-import { RANK, RANK_RULE } from "./const/rank.js";
+import { RANK, RANK_RULE } from "./const/rank.const.js";
 import { createResult } from "../utils/createResult.js";
+import { PLUS_COUNT } from "../common/const.js";
 
 class LottoResultCalculator {
 
@@ -15,7 +16,7 @@ class LottoResultCalculator {
       const matchCount = winningLotto.countMatches(myLotto);
       const hasBonus = winningLotto.hasBonusNumber(myLotto);
       const rank = this.judgeRank(matchCount, hasBonus);
-      result.find((item) => item.rank === rank).count += 1;
+      result.find((item) => item.rank === rank).count += PLUS_COUNT;
     }
 
     return result;
@@ -24,7 +25,7 @@ class LottoResultCalculator {
   /**
    * @param {number} matchCount
    * @param {boolean} hasBonus
-   * @returns {string} RANK.FIRST | RANK.SECOND | RANK.THIRD | RANK.FOURTH | RANK.FIFTH | RANK.NONE
+   * @returns {string} RankConst.FIRST | RANK.SECOND | RANK.THIRD | RANK.FOURTH | RANK.FIFTH | RANK.NONE
    */
   judgeRank(matchCount, hasBonus) {
     if (matchCount === RANK_RULE.FIRST) return RANK.FIRST;
