@@ -1,1 +1,2 @@
-export const parseIntArray = (str) => str.split(',').map(Number);
+const delimiter = ',';
+export const parseIntArray = (str) => str.split(delimiter).map(Number);
