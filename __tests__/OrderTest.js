@@ -1,7 +1,6 @@
 import Order from "../src/entity/Order.js";
-import order from "../src/entity/Order.js";
 
-describe("로또 클래스 테스트", () => {
+describe("주문 클래스 테스트", () => {
   test("구입 금액이 숫자가 아니라면 예외가 발생한다.", () => {
     expect(() => {
       new Order("a");
@@ -28,7 +27,7 @@ describe("로또 클래스 테스트", () => {
 
   test("최대 구입 금액을 초과하면 예외가 발생한다.", () => {
     expect(() => {
-      new order(1000001);
+      new Order(1000001);
     }).toThrow("[ERROR]");
   });
 
