@@ -7,8 +7,9 @@ class Order {
   #count;
 
   constructor(amount) {
-    this.#validate(amount);
-    this.#amount = amount;
+    const amountNumber = Number(amount);
+    this.#validate(amountNumber);
+    this.#amount = amountNumber;
     this.#count = this.#amount / LOTTO_PRICE;
   }
 
@@ -21,16 +22,15 @@ class Order {
   }
 
   #validate(amount) {
-    const amountNumber = Number(amount);
-    if (Number.isNaN(amountNumber)) {
+    if (Number.isNaN(amount)) {
       throwError(AMOUNT_ERROR_MESSAGE, AMOUNT_ERROR_TYPES.INVALID_AMOUNT);
     }
 
-    if (amountNumber < MIN_LOTTO_AMOUNT || amountNumber > MAX_LOTTO_AMOUNT) {
+    if (amount < MIN_LOTTO_AMOUNT || amount > MAX_LOTTO_AMOUNT) {
       throwError(AMOUNT_ERROR_MESSAGE, AMOUNT_ERROR_TYPES.INVALID_AMOUNT_ARANGE);
     }
 
-    if (amountNumber % LOTTO_PRICE !== LOTTO_PRICE_REMAINDER) {
+    if (amount % LOTTO_PRICE !== LOTTO_PRICE_REMAINDER) {
       throwError(AMOUNT_ERROR_MESSAGE, AMOUNT_ERROR_TYPES.INVALID_AMOUNT_FORMAT);
     }
   }
