@@ -5,7 +5,7 @@ export const LOTTO_ERROR_TYPES = {
 export const LOTTO_ERROR_MESSAGE = {
   [LOTTO_ERROR_TYPES.MAX_COUNT]: "[ERROR] 로또 번호는 6개여야 합니다.",
   [LOTTO_ERROR_TYPES.INVALID_NUMBER]: "[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.",
-  [LOTTO_ERROR_TYPES.DUPLICATE]: "[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.",
+  [LOTTO_ERROR_TYPES.DUPLICATE]: "[ERROR] 중복된 숫자가 존재합니다.",
 };
 
 export const AMOUNT_ERROR_TYPES = {
