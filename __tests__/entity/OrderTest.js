@@ -1,4 +1,4 @@
-import Order from "../src/entity/Order.js";
+import Order from "../../src/entity/Order.js";
 
 describe("주문 클래스 테스트", () => {
   test("구입 금액이 숫자가 아니라면 예외가 발생한다.", () => {
