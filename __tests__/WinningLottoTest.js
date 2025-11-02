@@ -18,5 +18,23 @@ describe("당첨 로또 클래스 테스트", () => {
     const myLotto = new Lotto([1, 2, 3, 4, 5, 6]);
     const winningLotto = new WinningLotto([1, 2, 3, 4, 5, 8], 1);
     expect(winningLotto.hasBonusNumber(myLotto)).toBe(true);
-  })
+  });
+
+  test("보너스 번호 값이 문자라면 예외가 발생한다.", () => {
+    expect(() => {
+      new WinningLotto([1, 2, 3, 4, 5, 8], "a");
+    }).toThrow("[ERROR]");
+  });
+
+  test("보너스 번호가 당첨번호와 중복이면 예외가 발생한다.", () => {
+    expect(() => {
+      new WinningLotto([1, 2, 3, 4, 5, 8], 1);
+    }).toThrow("[ERROR]");
+  });
+
+  test("보너스 번호가 1부터 45사이의 숫자 값이 아니라면 예외가 발생한다.", () => {
+    expect(() => {
+      new WinningLotto([1, 2, 3, 4, 5, 8], 46);
+    }).toThrow("[ERROR]");
+  });
 });
