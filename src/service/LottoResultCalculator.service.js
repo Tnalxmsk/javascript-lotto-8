@@ -28,7 +28,8 @@ class LottoResultCalculator {
    */
   judgeRank(matchCount, hasBonus) {
     if (matchCount === RANK_RULE.FIRST) return RANK.FIRST;
-    if (matchCount === RANK_RULE.SECOND) return hasBonus ? RANK.SECOND : RANK.THIRD;
+    if (matchCount === RANK_RULE.SECOND && hasBonus) return RANK.SECOND;
+    if (matchCount === RANK_RULE.THIRD) return RANK.THIRD;
     if (matchCount === RANK_RULE.FOURTH) return RANK.FOURTH;
     if (matchCount === RANK_RULE.FIFTH) return RANK.FIFTH;
     return RANK.NONE;
