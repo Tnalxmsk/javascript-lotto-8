@@ -11,6 +11,10 @@ class Ticket {
     return this.#lottos;
   }
 
+  getCount() {
+    return this.#lottos.length;
+  }
+
   getAllNumbers() {
     return this.#lottos.map((lotto) => lotto.numbers);
   }
