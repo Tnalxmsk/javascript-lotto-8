@@ -16,6 +16,10 @@ class WinningLotto extends Lotto {
     return filteredNumbers.length;
   }
 
+  hasBonusNumber(targetLotto) {
+    return targetLotto.numbers.includes(this.#bonusNumber);
+  }
+
   get bonusNumber() {
     return this.#bonusNumber;
   }
