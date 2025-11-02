@@ -1,6 +1,6 @@
 import { Random } from "@woowacourse/mission-utils";
 import Lotto from "../entity/Lotto.js";
-import { LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
+import { INITIAL_COUNT, LOTTO_COUNT, LOTTO_MAX_NUMBER, LOTTO_MIN_NUMBER } from "../common/const.js";
 import Ticket from "../entity/Ticket.js";
 
 class LottoMachine {
@@ -11,7 +11,7 @@ class LottoMachine {
   issue(order) {
     const lottos = [];
 
-    for (let i = 0; i < order.count; i++) {
+    for (let i = INITIAL_COUNT; i < order.count; i++) {
       const lotto = this.#makeLotto();
       lottos.push(lotto);
     }
