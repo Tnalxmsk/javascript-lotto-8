@@ -1,4 +1,5 @@
-import { PRIZE } from "./const/rank.js";
+import { PRIZE } from "./const/rank.const.js";
+import { INITIAL_TOTAL_PRIZE, PERCENT_BASE, PROFIT_RATE_DECIMAL } from "./const/profit.const.js";
 
 class ProfitCalculator {
 
@@ -13,7 +14,7 @@ class ProfitCalculator {
   }
 
   static calculateTotalPrize(result) {
-    let totalPrize = 0;
+    let totalPrize = INITIAL_TOTAL_PRIZE;
 
     result.forEach((item) => {
       totalPrize += PRIZE[item.rank] * item.count;
@@ -23,8 +24,8 @@ class ProfitCalculator {
   }
 
   static calculateProfitRate(totalPrize, purchaseAmount) {
-    const rate = totalPrize / purchaseAmount * 100;
-    return Number(rate.toFixed(1));
+    const rate = totalPrize / purchaseAmount * PERCENT_BASE;
+    return Number(rate.toFixed(PROFIT_RATE_DECIMAL));
   }
 }
 
